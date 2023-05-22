@@ -2,6 +2,7 @@ use p256::ecdsa::{SigningKey, VerifyingKey, signature::{Signer, Verifier}};
 use p256::ecdsa::Signature;
 use rand::rngs::OsRng;
 use p256::EncodedPoint;
+use bs58;
 
 fn generate_keypair() -> SigningKey {
     // Generate a random signing key
@@ -20,15 +21,15 @@ fn verify_signature(verifying_key: &VerifyingKey, message: &[u8], signature: &Si
 
 fn main() {
     let signing_key = generate_keypair();
-    println!("Signing Key: {:?}", signing_key.to_bytes());
+    println!("Signing Key: {}", bs58::encode(signing_key.to_bytes()).into_string());
 
     let verifying_key = VerifyingKey::from(&signing_key);
-    println!("Verifying Key: {:?}", EncodedPoint::from(&verifying_key).to_bytes());
+    println!("Verifying Key: {}", bs58::encode(EncodedPoint::from(&verifying_key).to_bytes()).into_string());
 
     let message = b"Hello, world!";
 
     let signature = sign_message(&signing_key, message);
-    println!("Signature: {:?}", signature.to_bytes());
+    println!("Signature: {}", bs58::encode(signature.to_bytes()).into_string());
 
     assert!(verify_signature(&verifying_key, message, &signature));
 
