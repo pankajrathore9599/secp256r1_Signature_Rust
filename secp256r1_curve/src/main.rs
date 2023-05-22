@@ -187,7 +187,7 @@ mod secp256r1_tests {
         };
 
         let encoded_transaction1 = encode_transaction(&transaction1);
-        let encoded_transaction2 = encode_transaction(&transaction2);
+        let _encoded_transaction2 = encode_transaction(&transaction2);
         if let Ok(signature) = sign_message(&signing_key, &encoded_transaction1) {
             // Verify the signature with a different transaction
             assert!(verify_transaction_signature(&public_key, &signature, &transaction2).is_err());
