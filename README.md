@@ -2,13 +2,13 @@
 In this repo I am implementing couple of "secp256r1' signature scheme funcctionalities.
 
 # Implementation Lists
--	Implement the secp256r1 signature scheme for generating and verifying digital signatures.
--	Write a function to convert a private key to a public key, which will be used for signing transactions.
--	Write a function to generate a new private key for each owner of the wallet.
--	Define a function to encode the transaction data for signature verification.
--	Implement unit tests for the secp256r1 signature scheme and the encoding function.
--	Write a function to verify a transaction's signature, including the transaction ID, public key, and signature.
--	Implement error handling for invalid signatures and public keys.
--	Write tests for the signature verification function, including edge cases and invalid input scenarios.
--	Implement a function to validate the wallet policy before approving a transaction, including the number of required signatures and the list of owners.
--	Write unit tests for the wallet policy validation function, including edge cases and invalid input scenarios.
+1. Develop the secp256r1 signature scheme to generate and authenticate digital signatures.
+2. Craft a function that transforms a private key into a public key, to be utilized for transaction signing.
+3. Construct a function that generates a unique private key for every wallet owner.
+4. Formulate a function to encode transaction data, aiding in signature verification.
+5. Incorporate unit tests for both the secp256r1 signature scheme and the encoding function.
+6. Create a function that verifies a transaction's signature, encompassing the transaction ID, public key, and the signature itself.
+7. Introduce error handling mechanisms for cases of invalid signatures and public keys.
+8. Develop comprehensive tests for the signature verification function, which should consider edge cases and scenarios with invalid inputs.
+9. Construct a function that validates the wallet policy prior to sanctioning a transaction. This should take into account the number of necessary        signatures and the list of owners.
+10. Integrate unit tests for the wallet policy validation function, covering edge cases and scenarios with invalid inputs.
